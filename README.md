@@ -173,6 +173,4 @@ Off-diagonal terms are only observed inside the band of the exciting input; the 
 
 Ehsan Zakeri, Aerospace Engineering, K. N. Toosi University of Technology (KNTU).
 
-## License
 
-Add a license of your choice (for example MIT) before publishing.
