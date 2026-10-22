@@ -121,7 +121,7 @@ A dash means no data was recorded.
 
 | Sine 0.3 Hz (fit 46.9%) | Sine 0.8 Hz (fit 71.5%) | Chirp run 3 (fit 69.5%) |
 |---|---|---|
-| <img src="images/roll_validation_sine_0p3Hz.png" width="300"> | <img src="images/roll_validation_sine_0p8Hz.png" width="300"> | <img src="images/roll_validation_chirp_run3.png" width="300"> |
+| <img src="images/mRoll_0.3Hz_sine_validation.png" width="300"> | <img src="images/mRoll_0.8Hz_sine_validation.png" width="300"> | <img src="images/mRoll_3rd_Chirp_validation.png" width="300"> |
 
 The plot title in `validate_roll_model_run3.m` is hard-coded as "standalone chirp run 3"; change the `title(...)` line when you validate on a sine log.
 
@@ -139,25 +139,25 @@ Roll model:
 
 | | |
 |---|---|
-| <img src="images/roll_residuals_1.png" width="380"> | <img src="images/roll_residuals_2.png" width="380"> |
-| <img src="images/roll_residuals_3.png" width="380"> | <img src="images/roll_residuals_4.png" width="380"> |
+| <img src="images/Residual_roll.png" width="380"> | <img src="images/mRoll_0.3Hz_sine_validation_correlation.png" width="380"> |
+| <img src="images/mRoll_0.8Hz_sine_validation_correlation.png" width="380"> | <img src="images/mRoll_3rd_Chirp_validation_correlation.png" width="380"> |
 
 Roll-rate model residuals:
 
-<img src="images/rollrate_residuals.png" width="380">
+<img src="images/roll_Residual_rate.png" width="380">
 
 <details>
 <summary>Early MIMO exploration (diagonal vs roll→yaw coupling)</summary>
 
 These figures come from an earlier exploratory 3×3 fit (`mimo_greybox_id.m` and `mimoODE.m`, not part of the scripts above). It compared a diagonal model (`M0`), a model with roll→yaw torque coupling `bzx` (`M1`), and a model with roll→yaw sensor leakage `cyr` (`M3`). Models with the suffix `a` were trained on run 1 and tested on run 2.
 
-![Simulated response of M0, M1, M3 on run 2](images/mimo_early_simulated_response.png)
+![Simulated response of M0, M1, M3 on run 2](images/model_fits.png)
 
-![Off-diagonal frequency responses](images/mimo_early_offdiagonal_response.png)
+![Off-diagonal frequency responses](images/off-diag.png)
 
 Off-diagonal terms are only observed inside the band of the exciting input; the dashed line is the diagonal `tau_z → yaw` term for reference.
 
-![Yaw response band-passed to 0.2–0.8 Hz](images/mimo_early_yaw_coupling_vs_leakage.png)
+![Yaw response band-passed to 0.2–0.8 Hz](images/yaw.png)
 
 </details>
 
